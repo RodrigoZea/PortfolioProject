@@ -9,6 +9,22 @@ canvas {
   height: 100%;
 }
 
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: white;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
 @font-face {
     font-family: 'Archive'; /*a name to be used later*/
     src: url('../resources/fonts/Archive-Regular.ttf') format('truetype'); /*URL to font*/
@@ -63,6 +79,7 @@ h1, h2 {
   z-index: 3;
   transform: translate3d(-50%, 0, 0);
   margin: auto;
+  text-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,0.2);
   color: #00e59a;
   line-height: 0.75em;
   letter-spacing: -5px;
@@ -171,4 +188,64 @@ a.bottom-left {
 a.bottom-right {
   bottom: 60px;
   right: 60px;
+}
+
+.horizontalNavbar {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 4.5em;
+    overflow: hidden;
+}
+
+.navBackground {
+    background: #00e59a;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.navIcons {
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.6em 1em 0 1em;
+}
+
+.logo {
+    width: 3em;
+    height: 3em;
+    z-index: 4;
+}
+
+.socialIcons {
+    z-index: 4;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    background: white;
+    z-index: 4;
+    margin: 0.2em 0.3em 0 0.3em;
+}
+
+.continue {
+    position: relative;
+    bottom: 4em;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.continue .svg-icon {
+    width: 3em;
+    height: 3em;
+    transform: rotate(90deg);
+    cursor: pointer;
 }

@@ -1,6 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import EarthHome from './EarthHome/EarthHome';
+import React from "react"
+import ReactDOM from "react-dom"
+import EarthHome from './EarthHome/EarthHome'
+import Navbar from './Navbar/Navbar'
+import ContinueButton from './ContinueButton/ContinueButton'
 import './main.scss'
 
 class App extends React.Component {
@@ -14,7 +16,9 @@ class App extends React.Component {
     render() {
         return (
            <div>
+               <Navbar />
                <EarthHome />
+               <ContinueButton />
            </div>
         )
     }
