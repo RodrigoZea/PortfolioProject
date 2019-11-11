@@ -25,16 +25,28 @@ canvas {
   stroke-width: 1;
 }
 
+// Fonts
 @font-face {
     font-family: 'Archive'; /*a name to be used later*/
     src: url('../resources/fonts/Archive-Regular.ttf') format('truetype'); /*URL to font*/
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'KozukaM'; /*a name to be used later*/
     src: url('../resources/fonts/KozGoPr6N-Medium.otf') format('opentype'); /*URL to font*/
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nexa Light'; /*a name to be used later*/
+    src: url('../resources/fonts/NexaLight.otf') format('opentype'); /*URL to font*/
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nexa Bold'; /*a name to be used later*/
+    src: url('../resources/fonts/NexaBold.otf') format('opentype'); /*URL to font*/
     font-weight: normal;
     font-style: normal;
 }
@@ -193,18 +205,23 @@ a.bottom-right {
 .horizontalNavbar {
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     height: 4.5em;
     overflow: hidden;
 }
 
 .navBackground {
-    background: #00e59a;
+    background-color: #00e59a;
     position: absolute;
+    transition: background-color 1s;
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: 4;
+}
+
+.navBackground.active {
+  background-color: blue;
 }
 
 .navIcons {
@@ -225,14 +242,24 @@ a.bottom-right {
     display: flex;
     flex-direction: row;
     align-content: space-around;
+    font-size: 2rem;
+    margin: 0.25em;
 }
 
-.square {
-    width: 40px;
-    height: 40px;
-    background: white;
-    z-index: 4;
-    margin: 0.2em 0.3em 0 0.3em;
+.socialIcons a {
+  margin: 0 0.3em 0 0.3em;
+  display: contents;
+}
+
+.socialIcons a i {
+  font-size: 2rem;
+  transition: color 0.3s;
+  color: white;
+  display: flex;
+}
+
+.socialIcons a i:hover {
+  color: rgb(240, 240, 240, 0.7);
 }
 
 .continue {
@@ -248,4 +275,95 @@ a.bottom-right {
     height: 3em;
     transform: rotate(90deg);
     cursor: pointer;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+}
+
+.slide.left {
+  
+}
+
+.cutout {
+  width: 60em;
+  height: 37em;
+  position: relative;
+  bottom: 1.7em;
+
+}
+
+.cutout.left {
+  clip-path: polygon(100% 0%, 70% 100%, 0% 100%, 0% 0%);
+  left: 2em;
+}
+
+.cutout.right {
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 30% 0%);
+  margin-left: 41em;
+  overflow: hidden;
+}
+
+.cutoutimg {
+  width: auto;
+  height: auto;
+  position: relative;
+  right: 15em;
+}
+
+.slideInfoContainer {
+  position: relative;
+  bottom: 14.5em;
+}
+
+.slideInfoContainer.left {
+  left: 2.5em;
+  text-align: left;
+}
+
+.slideInfoContainer.right {
+  right: 2.5em;
+  text-align: right;
+}
+
+.slideNumber {
+  font-family: 'Archive', 'sans-serif';
+  color: white;
+  font-size: 8em;
+  letter-spacing: -0.06em;
+}
+
+.slideSub {
+  font-family: 'Nexa Light', 'sans-serif';
+  text-transform: uppercase;
+  font-size: 1.3em;
+  letter-spacing: 0.02em;
+  margin-top: -0.8em;
+}
+
+.slideSubJp {
+  font-family: 'KozukaM', 'sans-serif';
+  font-size: 3em;
+  margin-top: -1.3em;
+}
+
+.textContainer {
+
+}
+
+.textContainer .textTitle {
+  font-family: 'Archive', 'sans-serif';
+  color: #4f98dc;
+  font-size: 3em;
+}
+
+.textContainer .textDescription {
+  font-family: 'Nexa Light', 'sans-serif';
+  color: white;
+  font-size: 1em;
 }

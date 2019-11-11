@@ -42,34 +42,12 @@ function Stars() {
     )
 }
 
-/*function Model({ url }) {
-    const model = useLoader(GLTFLoader, url, loader => {
-        const dracoLoader = new DRACOLoader()
-        dracoLoader.setDecoderPath('/draco-gltf/')
-        loader.setDRACOLoader(dracoLoader)
-    })
-    return (
-        <group rotation={[0, 0, 0]} position={[0, 0, 0]} scale={[7, 7, 7]}>
-            {model.map(({ geometry, material }) => {
-                const rocks = geometry.index.count < 80000
-                const Material = rocks ? 'meshLambertMaterial' : 'meshStandardMaterial'
-                return (
-                    <mesh
-                        key={geometry.uuid}
-                        geometry={geometry}
-                        castShadow={!rocks}
-                        receiveShadow={!rocks}>
-                        <Material attach="material" color="#575757"  map={material.map} roughness={1} />
-                    </mesh>
-                )
-            })}
-        </group>
-    )
-}*/
-
 function Model({ url }) {
     const [gltf, set] = useState()
     useMemo(() => new GLTFLoader().load(url, set), [url])
+    if (gltf) {
+        console.log(gltf.scene);
+    }
     return gltf ? <primitive scale={[7, 7, 7]} object={gltf.scene} /> : null
 }
 
