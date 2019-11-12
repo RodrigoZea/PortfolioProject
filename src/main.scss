@@ -352,18 +352,79 @@ a.bottom-right {
   margin-top: -1.3em;
 }
 
-.textContainer {
+.textContainer.left {
+  margin-left: auto;
+  margin-right: 15%;
+  margin-top: -53.5%;
+  text-align: right;
+  max-width: 15em;
+}
 
+.textContainer.right {
+  margin-right: auto;
+  margin-left: 15%;
+  margin-top: -53.5%;
+  text-align: left;
+  max-width: 15em;
 }
 
 .textContainer .textTitle {
   font-family: 'Archive', 'sans-serif';
   color: #4f98dc;
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .textContainer .textDescription {
   font-family: 'Nexa Light', 'sans-serif';
   color: white;
-  font-size: 1em;
+  font-size: 1.5em;
+}
+
+.sidenav {
+  height: 100%;
+  width: 100px;
+  position: fixed;
+  z-index: 1;
+  top: 110px;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav ul {
+    display: inline-block;
+    list-style-type: none;
+    white-space: nowrap;
+    font-family: 'Archive', 'sans-serif';
+    font-size: 12px;
+    float: left;
+}
+
+.sidenav li {
+    cursor: pointer;
+    float: left;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    margin-top: 2.5vw;
+    opacity: 0.35;
+    transition: opacity 0.5s linear;
+}
+
+.sidenav li.active {
+    opacity: 1;
+}
+
+.sidenav li:hover {
+    opacity: 1;
+}
+
+
+.sidenav a{
+    display: block;
+    color: $colorHighlight;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+
 }
