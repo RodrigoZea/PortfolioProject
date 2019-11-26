@@ -5,6 +5,7 @@ import Navbar from './Navbar/Navbar'
 import SideNavbar from './SideNavbar/SideNavbar'
 import ContinueButton from './ContinueButton/ContinueButton'
 import SlideContainer from './SlideContainer/SlideContainer'
+import ShowcaseContainer from './ShowcaseContainer/ShowcaseContainer'
 import './main.scss'
 
 class App extends React.Component {
@@ -19,11 +20,11 @@ class App extends React.Component {
         return (
            <div>
                 <Navbar />
-                <SideNavbar />
                 <EarthHome />
                 <ContinueButton />
                 <div id="section1" />
-                <SlideContainer/>
+                <SlideContainer />
+                <ShowcaseContainer />
            </div>
         )
     }

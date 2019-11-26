@@ -8,6 +8,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import '../main.scss'
 import Particles from '../Particles/Particles'
+var earth = require('../../resources/models/earth.gltf')
 
 extend({ OrbitControls })
 const Controls = props => {
@@ -63,7 +64,7 @@ export default class EarthHome extends React.Component {
                    RODRIGO ZEA
             </h1>
             <h2>
-                   ロドリゴ・ゼア
+                   WEB AND GAME DEVELOPER
             </h2>
 
             <Canvas camera={{ position: [0, 0, 15] }} shadowMap>
@@ -79,7 +80,7 @@ export default class EarthHome extends React.Component {
                 />
                 <fog attach="fog" args={['#cc7b32', 16, 20]} />
 
-                <Model url="resources/models/earth.gltf" />
+                <Model url={earth} />
                 <Controls
                     autoRotate
                     enablePan={false}
